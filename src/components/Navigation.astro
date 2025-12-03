@@ -10,6 +10,7 @@ const currentPath = Astro.url.pathname;
     <li><a href="/" class={`menu-link ${currentPath === '/' ? 'active' : ''}`}>Home</a></li>
     <li><a href="/posts" class={`menu-link ${currentPath.startsWith('/posts') ? 'active' : ''}`}>Posts</a></li>
     <li><a href="/contact" class={`menu-link ${currentPath.startsWith('/contact') ? 'active' : ''}`}>Contact</a></li>
+    <li><a href="/comments" class={`menu-link ${currentPath.startsWith('/comments') ? 'active' : ''}`}>Comments</a></li>
   </ul>
 </nav>
 

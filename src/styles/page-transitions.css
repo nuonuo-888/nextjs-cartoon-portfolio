@@ -125,3 +125,30 @@
   transform: translateY(0);
 }
 
+/* Comments page animations */
+.comments-header-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.comments-header-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.comments-content-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease-out 0.2s, transform 1.2s ease-out 0.2s;
+}
+
+.comments-content-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.comments-content-animate:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
