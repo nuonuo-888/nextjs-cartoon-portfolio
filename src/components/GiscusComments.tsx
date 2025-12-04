@@ -14,10 +14,10 @@ const GiscusComments: React.FC<GiscusCommentsProps> = ({
 }) => {
   // Giscus 配置 - 使用提供的默认值或环境变量
   const giscusConfig = {
-    repo: repo || import.meta.env.PUBLIC_GISCUS_REPO || 'tomcomtang/astro-cartoon-portfolio',
-    repoId: repoId || import.meta.env.PUBLIC_GISCUS_REPO_ID || 'R_kgDOQhFeMw',
+    repo: repo || process.env.NEXT_PUBLIC_GISCUS_REPO || 'tomcomtang/astro-cartoon-portfolio',
+    repoId: repoId || process.env.NEXT_PUBLIC_GISCUS_REPO_ID || 'R_kgDOQhFeMw',
     category: 'General', // 固定值
-    categoryId: categoryId || import.meta.env.PUBLIC_GISCUS_CATEGORY_ID || 'DIC_kwDOQhFeM84CzVPU',
+    categoryId: categoryId || process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID || 'DIC_kwDOQhFeM84CzVPU',
     mapping: 'pathname' as const, // 固定值
     reactionsEnabled: '1' as const, // 固定值
     emitMetadata: '0' as const, // 固定值

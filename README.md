@@ -1,6 +1,6 @@
-# Astro Cartoon Portfolio
+# Next.js Cartoon Portfolio
 
-A modern, responsive portfolio website built with Astro 5, featuring a beautiful cartoon-style design with smooth animations, interactive project carousel, blog system, and comment integration.
+A modern, responsive portfolio website built with Next.js, featuring a beautiful cartoon-style design with smooth animations, interactive project carousel, blog system, and comment integration.
 
 ## Quick Deploy
 
@@ -27,14 +27,15 @@ You can preview the project online at:
 
 ## Tech Stack
 
-- **Framework**: Astro 5.x
-- **UI Library**: React (for Giscus comments)
+- **Framework**: Next.js 15.x (App Router)
+- **UI Library**: React 19
 - **Styling**: Custom CSS with CSS Variables
 - **Animations**: Framer Motion (for carousel effects)
-- **Content**: Markdown with Astro Content Collections
+- **Content**: Markdown with gray-matter
+- **Markdown Rendering**: react-markdown with remark-gfm
 - **Comments**: Giscus (GitHub Discussions)
 - **Language**: TypeScript
-- **Build Tool**: Vite
+- **Build Tool**: Next.js
 
 ## Getting Started
 
@@ -56,45 +57,51 @@ npm install
 npm run dev
 ```
 
+The app will be available at `http://localhost:3000`
+
 4. Build for production:
 
 ```bash
 npm run build
 ```
 
-5. Preview the production build:
+5. Start the production server:
 
 ```bash
-npm run preview
+npm start
 ```
 
 ## Project Structure
 
 ```
+├── app/                   # Next.js App Router pages
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   ├── contact/
+│   │   └── page.tsx
+│   ├── comments/
+│   │   └── page.tsx
+│   └── posts/
+│       ├── page.tsx
+│       ├── PostsPageClient.tsx
+│       └── [slug]/
+│           ├── page.tsx
+│           └── PostPageClient.tsx
 ├── src/
-│   ├── components/         # Reusable Astro components
-│   │   ├── AboutSection.astro
-│   │   ├── Footer.astro
+│   ├── components/         # React components
+│   │   ├── AboutSection.tsx
+│   │   ├── Footer.tsx
 │   │   ├── GiscusComments.tsx
-│   │   ├── HeroSection.astro
-│   │   ├── Navigation.astro
-│   │   ├── ProficiencySection.astro
-│   │   └── ProjectsSection.astro
+│   │   ├── HeroSection.tsx
+│   │   ├── Navigation.tsx
+│   │   ├── ProficiencySection.tsx
+│   │   └── ProjectsSection.tsx
 │   ├── config/            # Configuration files
 │   │   ├── posts-images.ts
 │   │   ├── projects.ts
 │   │   └── site.ts
 │   ├── content/           # Markdown blog posts
-│   │   ├── config.ts
 │   │   └── posts/
-│   ├── pages/             # Astro pages
-│   │   ├── index.astro
-│   │   ├── about.astro
-│   │   ├── contact.astro
-│   │   ├── comments.astro
-│   │   ├── posts.astro
-│   │   └── posts/
-│   │       └── [slug].astro
 │   └── styles/            # CSS stylesheets
 │       ├── home.css
 │       ├── posts.css
@@ -102,6 +109,8 @@ npm run preview
 │       ├── contact.css
 │       ├── comments.css
 │       └── page-transitions.css
+├── lib/                   # Utility functions
+│   └── posts.ts           # Post processing utilities
 └── public/                # Static assets
     ├── svg/              # SVG icons and images
     ├── images/           # Image assets
@@ -213,12 +222,12 @@ The blog system supports:
 
 ## Environment Variables
 
-For Giscus comments, you can set these environment variables:
+For Giscus comments, you can set these environment variables in a `.env.local` file:
 
 ```env
-PUBLIC_GISCUS_REPO=your-username/your-repo
-PUBLIC_GISCUS_REPO_ID=your-repo-id
-PUBLIC_GISCUS_CATEGORY_ID=your-category-id
+NEXT_PUBLIC_GISCUS_REPO=your-username/your-repo
+NEXT_PUBLIC_GISCUS_REPO_ID=your-repo-id
+NEXT_PUBLIC_GISCUS_CATEGORY_ID=your-category-id
 ```
 
 ## License
@@ -231,4 +240,4 @@ tomcomtang
 
 ## About
 
-A modern portfolio website template built with Astro, featuring a cartoon-style design, interactive project showcase, and a complete blog system with comment integration.
+A modern portfolio website template built with Next.js, featuring a cartoon-style design, interactive project showcase, and a complete blog system with comment integration.

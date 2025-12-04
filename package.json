@@ -1,21 +1,27 @@
 {
-  "name": "astro-cartoon-portfolio",
-  "type": "module",
+  "name": "nextjs-cartoon-portfolio",
   "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@astrojs/react": "^4.4.2",
     "@giscus/react": "^3.1.0",
+    "framer-motion": "^12.23.25",
+    "gray-matter": "^4.0.3",
+    "next": "^15.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "astro": "^5.16.3",
-    "framer-motion": "^12.23.25",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "typescript": "^5.7.2"
   }
 }
